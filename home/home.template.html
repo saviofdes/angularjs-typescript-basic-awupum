@@ -1,0 +1,13 @@
+<div class="parent">
+  <h1>Hello from {{$ctrl.name.firstName}}!</h1>
+
+  <h1 ng-if="$ctrl.idFromChild < 5">ID from Child : {{$ctrl.idFromChild}}</h1>
+  <child input-name="$ctrl.name" on-call-parent-callback="$ctrl.onCallParentCallback"></child>
+  <h2>Child data update form:</h2>
+  <input type="text" ng-model="$ctrl.name.firstName">
+  <input type="text" ng-model="$ctrl.name.lastName">
+  <h2>Users</h2>
+  <div ng-repeat="user in $ctrl.users">
+    <user-detail user="user"></user-detail>
+  </div>
+</div>
